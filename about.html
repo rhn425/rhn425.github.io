@@ -78,14 +78,15 @@
     $(document).ready(function(){
       // Smooth scrolling for links with class 'page-scroll'
       $('a.page-scroll').on('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top
-        }, 800, 'easeInOutExpo');
-        event.preventDefault();
+        var target = $(this.hash);
+        if (target.length) {
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 800, 'easeInOutExpo');
+        }
       });
     });
   </script>
 </body>
 </html>
-
