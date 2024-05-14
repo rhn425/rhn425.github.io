@@ -60,7 +60,7 @@ ul.dropdown-menu {
 }
 .abt .jumbotron  {
   background-color: #228ae6;
-  padding: 100px; /* Increase padding to enlarge the area */
+  padding: 152px; /* Increase padding to enlarge the area */
 }
 .abt h3{
   
@@ -224,3 +224,6 @@ html, body {
 .banner p {
   margin-top: 10px;
 }
+
+
+
