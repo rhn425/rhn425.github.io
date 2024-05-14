@@ -69,5 +69,23 @@
       </div>
     </div>
   </section>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Smooth scrolling script -->
+  <script>
+    $(document).ready(function(){
+      // Smooth scrolling for links with class 'page-scroll'
+      $('a.page-scroll').on('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 800, 'easeInOutExpo');
+        event.preventDefault();
+      });
+    });
+  </script>
 </body>
 </html>
+
