@@ -11,43 +11,30 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
   <style>
+    /* Reset body and html to prevent scrolling */
+    body, html {
+      overflow: hidden;
+      height: 100%;
+    }
+
     .container {
       text-align: center;
     }
 
-    .circle-frame {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 150px auto 0; /* Adjust margin as needed */
+    .jumbotron {
+      margin-top: 150px; /* Adjust margin as needed */
+      background-color: #228ae6;
+      padding: 100px;
     }
 
-    .circle-frame img {
-      width: 100%;
-      height: auto;
+    .jumbotron h3 {
+      color: white;
+      font-size: 40px;
     }
 
-    h3 {
-      font-size: 35px; /* Adjust font size for h3 */
-    }
-
-    .typing {
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 35px; /* Adjust font size for typing text */
-      border-right: .15em solid orange; /* Typewriter cursor */
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: orange; }
+    .jumbotron p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
     }
   </style>
 </head>
@@ -69,29 +56,18 @@
       </div>
     </div>
   </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel="stylesheet" href="./style.css">
-</head>
-<body>
-<!--About-->
-<div class="abt" id="about">
-<div class="jumbotron">
-  <div class="container">
-    <h3>About Me</h3>
-    <hr></hr>
-    <p>I'm a storyteller behind the lens, turning raw footage into cinematic magic. Dive into my portfolio for a glimpse of dynamic edits, captivating narratives, and visual flair. Let's bring your ideas to life through the art of video editing!
- <p>
-But there's still more! In my spare time, I work as a freelance DJ. If you need to establish a mood for your event; Whether it's a casual get-together or an exciting party, I've got the music to keep everyone moving.
- <p>
-Together, let's accomplish your vision; Whether it's  spectacular visuals or an amazing playlist, we'll create magic together!   </p>
-    
 
-
-<!--End ofAbout-->
+  <!--About Section-->
+  <div class="abt" id="about">
+    <div class="jumbotron">
+      <div class="container">
+        <h3>About Me</h3>
+        <hr></hr>
+        <p>I'm a storyteller behind the lens, turning raw footage into cinematic magic. Dive into my portfolio for a glimpse of dynamic edits, captivating narratives, and visual flair. Let's bring your ideas to life through the art of video editing!</p>
+        <p>But there's still more! In my spare time, I work as a freelance DJ. If you need to establish a mood for your event; Whether it's a casual get-together or an exciting party, I've got the music to keep everyone moving.</p>
+        <p>Together, let's accomplish your vision; Whether it's spectacular visuals or an amazing playlist, we'll create magic together!</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
