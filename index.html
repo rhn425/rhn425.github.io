@@ -11,6 +11,12 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
   <style>
+    /* Reset body and html to prevent scrolling */
+    body, html {
+      overflow: hidden;
+      height: 100%;
+    }
+
     .container {
       text-align: center;
     }
@@ -48,10 +54,6 @@
     @keyframes blink-caret {
       from, to { border-color: transparent; }
       50% { border-color: orange; }
-    }
-
-    body {
-      overflow: hidden; /* Prevent scrolling */
     }
   </style>
 </head>
