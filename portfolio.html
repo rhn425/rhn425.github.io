@@ -71,6 +71,27 @@
       width: 100%;
       height: 100%;
     }
+    
+    /* Style for video popup */
+    .video-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow: auto;
+    }
+    
+    .video-popup video {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: auto;
+      margin-top: 5%;
+    }
   </style>
 </head>
 <body>
@@ -102,7 +123,7 @@
   <div class="container-fluid">
     <div class="row no-gutter">
       <div class="col-6 col-lg-4 col-sm-6">
-        <div class="container video-container">
+        <div class="container video-container" onclick="showVideo('video1.mp4')">
           <video controls>
             <source src="BNTY.mp4" type="assets">
             Your browser does not support the video tag.
@@ -110,7 +131,7 @@
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-        <div class="container video-container">
+        <div class="container video-container" onclick="showVideo('video2.mp4')">
           <video controls>
             <source src="video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -118,7 +139,7 @@
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-        <div class="container video-container">
+        <div class="container video-container" onclick="showVideo('video3.mp4')">
           <video controls>
             <source src="video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -129,7 +150,7 @@
     
     <div class="row no-gutter">
       <div class="col-6 col-lg-4 col-sm-6">
-        <div class="container video-container">
+        <div class="container video-container" onclick="showVideo('video4.mp4')">
           <video controls>
             <source src="video4.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -137,7 +158,7 @@
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-        <div class="container video-container">
+        <div class="container video-container" onclick="showVideo('video5.mp4')">
           <video controls>
             <source src="video5.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -145,7 +166,7 @@
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-        <div class="container video-container">
+        <div class="container video-container" onclick="showVideo('video6.mp4')">
           <video controls>
             <source src="video6.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -157,8 +178,24 @@
 </div>
 <!--End of Portfolio-->
 
+<!-- Video Popup -->
+<div class="video-popup" id="videoPopup">
+  <video controls id="popupVideo">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+  function showVideo(videoSrc) {
+    var popupVideo = document.getElementById('popupVideo');
+    popupVideo.src = videoSrc;
+    
+    var videoPopup = document.getElementById('videoPopup');
+    videoPopup.style.display = 'block';
+  }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
-
