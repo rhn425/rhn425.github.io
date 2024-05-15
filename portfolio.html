@@ -145,27 +145,27 @@
     <div class="row no-gutter">
       <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('video1.mp4')"><i class="fa fa-play"></i></div>
+          <div class="play-button" onclick="showVideo('videos/video1.mp4')"><i class="fa fa-play"></i></div>
           <video controls style="display: none;">
-            <source src="video1.mp4" type="video/mp4">
+            <source src="videos/video1.mp4" type="asstes">
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('video2.mp4')"><i class="fa fa-play"></i></div>
+          <div class="play-button" onclick="showVideo('videos/video2.mp4')"><i class="fa fa-play"></i></div>
           <video controls style="display: none;">
-            <source src="video2.mp4" type="video/mp4">
+            <source src="videos/video2.mp4" type="asstes">
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('video3.mp4')"><i class="fa fa-play"></i></div>
+          <div class="play-button" onclick="showVideo('videos/video3.mp4')"><i class="fa fa-play"></i></div>
           <video controls style="display: none;">
-            <source src="video3.mp4" type="video/mp4">
+            <source src="videos/video3.mp4" type="asstes">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -175,27 +175,57 @@
     <div class="row no-gutter">
       <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('video4.mp4')"><i class="fa fa-play"></i></div>
+          <div class="play-button" onclick="showVideo('videos/video4.mp4')"><i class="fa fa-play"></i></div>
           <video controls style="display: none;">
-            <source src="video4.mp4" type="video/mp4">
+            <source src="videos/video4.mp4" type="asstes">
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('video5.mp4')"><i class="fa fa-play"></i></div>
+          <div class="play-button" onclick="showVideo('videos/video5.mp4')"><i class="fa fa-play"></i></div>
           <video controls style="display: none;">
-            <source src="video5.mp4" type="video/mp4">
+            <source src="videos/video5.mp4" type="asstes">
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('video6.mp4')"><i class="fa fa-play"></i></div>
+          <div class="play-button" onclick="showVideo('videos/video6.mp4')"><i class="fa fa-play"></i></div>
           <video controls style="display: none;">
-            <source src="video6.mp4" type="video/mp4">
+            <source src="videos/video6.mp4" type="asstes">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row no-gutter">
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('videos/video7.mp4')"><i class="fa fa-play"></i></div>
+          <video controls style="display: none;">
+            <source src="videos/video7.mp4" type="asstes/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('videos/video8.mp4')"><i class="fa fa-play"></i></div>
+          <video controls style="display: none;">
+            <source src="videos/video8.mp4" type="asstes/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('videos/video9.mp4')"><i class="fa fa-play"></i></div>
+          <video controls style="display: none;">
+            <source src="videos/video9.mp4" type="asstes/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -205,30 +235,19 @@
 </div>
 <!--End of Portfolio-->
 
-<!-- Video Popup -->
-<div class="video-popup" id="videoPopup" onclick="hideVideo()">
-  <video controls id="popupVideo">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
 <script>
-  function showVideo(videoSrc) {
-    var popupVideo = document.getElementById('popupVideo');
-    popupVideo.src = videoSrc;
-    
-    var videoPopup = document.getElementById('videoPopup');
-    videoPopup.style.display = 'flex';
-  }
-  
-  function hideVideo() {
-    var videoPopup = document.getElementById('videoPopup');
-    videoPopup.style.display = 'none';
-    
-    var popupVideo = document.getElementById('popupVideo');
-    popupVideo.pause();
+  function showVideo(src) {
+    var videoPopup = document.querySelector('.video-popup');
+    var popupVideo = videoPopup.querySelector('video');
+    popupVideo.src = src;
+    videoPopup.style.display = 'block';
+    popupVideo.play();
   }
 </script>
+
+<div class="video-popup" onclick="this.style.display='none'">
+  <video controls autoplay></video>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
