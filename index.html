@@ -11,48 +11,15 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
   <style>
-    .container {
-      text-align: center;
-    }
-
-    .circle-frame {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 150px auto 0; /* Adjust margin as needed */
-    }
-
-    .circle-frame img {
-      width: 100%;
-      height: auto;
-    }
-
-    h3 {
-      font-size: 35px; /* Adjust font size for h3 */
-    }
-
-    .typing {
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 35px; /* Adjust font size for typing text */
-      border-right: .15em solid orange; /* Typewriter cursor */
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: orange; }
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+      backdrop-filter: blur(10px); /* Apply blur effect */
+      -webkit-backdrop-filter: blur(10px); /* Apply blur effect for Safari */
     }
   </style>
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
+  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
@@ -70,6 +37,7 @@
     </div>
   </div>
 
+  
     <!--Banner-->
 
 <!DOCTYPE html>
@@ -155,3 +123,11 @@
 
   typeRole(); // Start typing the roles
 </script>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
