@@ -93,6 +93,10 @@
       display: block;
       margin: auto;
       margin-top: 10%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     
     /* Play button style */
@@ -114,6 +118,24 @@
     .play-button i {
       font-size: 30px;
       color: #333;
+    }
+    
+    /* Navigation arrows */
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .nav-arrow.left {
+      left: 20px;
+    }
+    
+    .nav-arrow.right {
+      right: 20px;
     }
   </style>
 </head>
@@ -237,13 +259,32 @@
 </div>
 <!--End of Portfolio-->
 
+<!-- Navigation arrows -->
+<div class="nav-arrow left" onclick="navigate(-1)">&#10094;</div>
+<div class="nav-arrow right" onclick="navigate(1)">&#10095;</div>
+
 <script>
+  var currentVideoIndex = 0;
+  var videos = document.querySelectorAll('.video-container video');
+
   function showVideo(src) {
     var videoPopup = document.querySelector('.video-popup');
     var popupVideo = videoPopup.querySelector('video');
     popupVideo.src = src;
     videoPopup.style.display = 'block';
     popupVideo.play();
+    popupVideo.loop = true;
+  }
+
+  function navigate(direction) {
+    currentVideoIndex += direction;
+    if (currentVideoIndex < 0) {
+      currentVideoIndex = videos.length - 1;
+    } else if (currentVideoIndex >= videos.length) {
+      currentVideoIndex = 0;
+    }
+    var src = videos[currentVideoIndex].src;
+    showVideo(src);
   }
 </script>
 
