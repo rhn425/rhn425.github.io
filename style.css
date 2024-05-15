@@ -188,4 +188,42 @@ ul.dropdown-menu {
   margin-bottom: 10px; /* Add margin to the bottom of each paragraph */
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed; /* Fix the background position */
+}
+
+.banner {
+  padding-top: 50px;
+}
+
+/* Add this CSS to remove the white space at the bottom */
+html, body {
+  height: 100%;
+}
+
+.banner .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.circle-frame {
+  margin: auto;
+}
+
+.typing {
+  margin-top: 20px;
+}
+
+/* Adjust margin-top for the paragraphs */
+.banner p {
+  margin-top: 10px;
+}
+
+
 
