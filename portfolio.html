@@ -58,8 +58,7 @@
       align-items: center;
       width: 100%;
       position: relative;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio (horizontal) */
-      cursor: pointer;
+      padding-top: 100%; /* 1:1 Aspect Ratio (square) */
     }
     
     /* Make video player 1:1 px */
@@ -77,21 +76,23 @@
     .video-popup {
       display: none;
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 800px;
-      height: auto;
-      z-index: 1000;
+      height: 100%;
       background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
       overflow: auto;
-      text-align: center;
     }
     
     .video-popup video {
-      width: 100%;
+      width: auto;
       height: auto;
+      max-width: 80%;
+      max-height: 80%;
+      display: block;
+      margin: auto;
+      margin-top: 10%;
     }
     
     /* Play button style */
@@ -114,35 +115,6 @@
       font-size: 30px;
       color: #333;
     }
-    
-    /* Navigation arrows */
-    .nav-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    
-    .nav-arrow i {
-      font-size: 20px;
-      color: #333;
-    }
-    
-    .nav-arrow.left {
-      left: 10px;
-    }
-    
-    .nav-arrow.right {
-      right: 10px;
-    }
   </style>
 </head>
 <body>
@@ -163,164 +135,167 @@
       </div>
     </div>
   </div>
-  <!--Portfolio-->
+  <!--PortFolio-->
 
-  <div class="no-padding text-center" id="portfolio">
-    <div class="container">
-      <h1>Portfolio</h1>
-      <hr>
+<div class="no-padding text-center" id="portfolio">
+ <div class="container">
+   <h1>Portfolio</h1>
+    <hr></hr>
+  </div>
+ 
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video1.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video2.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video3.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
-
-    <div class="container-fluid">
-      <div class="row no-gutter">
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video1.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
-        </div>
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video2.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
-        </div>
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video3.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
+    
+    <div class="row no-gutter">
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video4.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
-
-      <div class="row no-gutter">
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video4.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video4.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
-        </div>
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video5.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video5.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
-        </div>
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video6.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video6.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video5.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
-
-      <div class="row no-gutter">
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video7.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video7.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video6.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video8.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video8.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
+      </div>
+    </div>
+    
+    <div class="row no-gutter">
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video7.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <div class="col-4 col-lg-4 col-sm-4">
-          <div class="container video-container" onclick="showVideo('assets/video9.mp4')">
-            <video autoplay muted loop preload="metadata" style="display: none;">
-              <source src="assets/video9.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="play-button"><i class="fa fa-play"></i></div>
-          </div>
+      </div>
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video8.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video8.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-4 col-lg-4 col-sm-4">
+        <div class="container video-container">
+          <div class="play-button" onclick="showVideo('assets/video9.mp4')"><i class="fa fa-play"></i></div>
+          <video controls preload="metadata" style="display: none;">
+            <source src="assets/video9.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
   </div>
-  <!--End of Portfolio-->
+</div>
+<!--End of Portfolio-->
 
-  <!-- Navigation Arrows -->
-  <div class="nav-arrow left" onclick="prevVideo()"><i class="fa fa-chevron-left"></i></div>
-  <div class="nav-arrow right" onclick="nextVideo()"><i class="fa fa-chevron-right"></i></div>
+<script>
+  function showVideo(src) {
+    var videoPopup = document.querySelector('.video-popup');
+    var popupVideo = videoPopup.querySelector('video');
+    popupVideo.src = src;
+    videoPopup.style.display = 'block';
+    popupVideo.play();
+  }
+</script>
 
-  <script>
-    // Show pop-out video
-    function showVideo(src) {
-      var videoPopup = document.querySelector('.video-popup');
-      var popupVideo = videoPopup.querySelector('video');
-      popupVideo.src = src;
-      videoPopup.style.display = 'block';
-      popupVideo.play();
-    }
+<div class="video-popup" onclick="this.style.display='none'">
+  <video controls autoplay loop></video>
+</div>
 
-    // Close pop-out video
-    document.querySelector('.video-popup').addEventListener('click', function() {
-      var popupVideo = this.querySelector('video');
-      popupVideo.pause();
-      this.style.display = 'none';
+<script>
+  // Autoplay the videos for 5 seconds without sound
+  var autoplayVideos = document.querySelectorAll('.video-container video');
+  autoplayVideos.forEach(function(video) {
+    video.muted = true;
+    video.addEventListener('canplay', function() {
+      setTimeout(function() {
+        video.pause();
+      }, 5000);
     });
+  });
 
-    // Navigation arrows
-    var currentVideo = 0;
-    var videos = document.querySelectorAll('.video-container video');
-    
-    function nextVideo() {
-      videos[currentVideo].pause();
-      currentVideo = (currentVideo + 1) % videos.length;
-      showVideo(videos[currentVideo].src);
-    }
-    
-    function prevVideo() {
-      videos[currentVideo].pause();
-      currentVideo = (currentVideo - 1 + videos.length) % videos.length;
-      showVideo(videos[currentVideo].src);
-    }
-  </script>
+  // Loop the pop-out video while playing
+  var popupVideo = document.querySelector('.video-popup video');
+  popupVideo.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  });
 
-  <div class="video-popup">
-    <video controls autoplay loop></video>
+  // Navigation arrows
+  var currentVideo = 0;
+  var videos = document.querySelectorAll('.video-container video');
+
+  function nextVideo() {
+    videos[currentVideo].pause();
+    currentVideo = (currentVideo + 1) % videos.length;
+    showVideo(videos[currentVideo].src);
+  }
+
+  function prevVideo() {
+    videos[currentVideo].pause();
+    currentVideo = (currentVideo - 1 + videos.length) % videos.length;
+    showVideo(videos[currentVideo].src);
+  }
+</script>
+
+<div class="video-popup">
+  <video controls autoplay loop></video>
+  <div class="nav-arrows">
+    <button onclick="prevVideo()"><i class="fa fa-chevron-left"></i></button>
+    <button onclick="nextVideo()"><i class="fa fa-chevron-right"></i></button>
   </div>
+</div>
 
-  <script>
-    // Autoplay the videos for 5 seconds without sound
-    var autoplayVideos = document.querySelectorAll('.video-container video');
-    autoplayVideos.forEach(function(video) {
-      video.muted = true;
-      video.addEventListener('canplay', function() {
-        setTimeout(function() {
-          video.pause();
-        }, 5000);
-      });
-    });
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
