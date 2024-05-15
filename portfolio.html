@@ -49,6 +49,28 @@
       from, to { border-color: transparent; }
       50% { border-color: orange; }
     }
+    
+    /* Add spacing between videos */
+    .video-container {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      padding-top: 100%; /* 1:1 Aspect Ratio (square) */
+    }
+    
+    /* Make video player 1:1 px */
+    .video-container video {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -79,29 +101,64 @@
  
   <div class="container-fluid">
     <div class="row no-gutter">
-      <div class=" col-6 col-lg-4 col-sm-6">
-       <<div style="position:relative; width:100%; height:0px; padding-bottom:177.917%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/a0112u?" width="100%" style="border:none; width:70%; height:70%; position:absolute; left:65px; top:0px; overflow:hidden;"></iframe></div>
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-          <div style="position:relative; width:100%; height:0px; padding-bottom:100.000%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/3sqp99?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:65px; overflow:hidden;"></iframe></div>
+        <div class="container video-container">
+          <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-         <<div style="position:relative; width:100%; height:0px; padding-bottom:177.917%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/qmxamt?" width="100%" style="border:none; width:70%; height:70%; position:absolute; left:65px; top:0px; overflow:hidden;"></iframe></div>
+        <div class="container video-container">
+          <video controls>
+            <source src="video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
     
     <div class="row no-gutter">
-      <div class=" col-6 col-lg-4 col-sm-6">
-      <img src="https://cdn-cf-east.streamable.com/image/cmxp9z.jpg?Expires=1715705720184&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=gHeyarcbTocAg1QgMo7ByDxR5~ZXdM-3rGzR3qGC5RMgpUicgvvIvRSbZcjsrhx~whcwhF6f6HCaSl1lYPPaw32oeDn1ZUBRdGnJjMwGAHARC0vVrspIJkaQe3vo91uflaz1ZBGZaBpXyfrsef3IPIOdPkwI62iMiqgftpeh6OMS7Hyc1O8V88d9q~k~z1N7QiK6PkgrDYrjJ8y-eQGt1oXtozgFLNYL3RY87XSbQnuT6Z-2380sQXGu7yIi8TsQCaMfjzRZ2UCz65NvpHS~LHMqm15sZr19yClSmlO5aBslM9TYjbQs2vzaGflB2lbwMYM3UA08xu7MzZee4PzP5A__" class="img-thumbnail" alt="Project-1" width="100%" height="-220" style="position: relative; top: -190px; left: 20px;">
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-        <img src="https://cdn-cf-east.streamable.com/image/2zwtoj.jpg?Expires=1715704889319&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=bolzz5rPzpw6M2mnhxATDP7udPgCWAaetOa73PmIb7ATA-Mid6cwFTkKD1qlswASGIo0L8ffWCURsDkkw0BzPZwLU4ulm072mczdxMvk0SySWX5VCur~spFjSge6XwmuKSV4kvVNMbqLatNguzL5d~kZXP3FnjpFnOmnuVJOmYLt6lHdrSSS~K0zmgEWB0FIP7hAMWrPYkIDqC3jsYbrwa69-Twazw7nsI-VvOZRg-JnjCbJPffPU4YrFzuIuJG9W0eD6hksy~oTKJlPcGessK9m3i466X8VnOiKQk65lYyyAwXMTZF6g8yxTY1Tu-OIFpxVczXeQc6-tuCxAE0otg__" class="img-thumbnail" alt="Project-1" width="100%" height="-220" style="position: relative; top: -190px; left: 0px;">
-
+        <div class="container video-container">
+          <video controls>
+            <source src="video5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
       <div class="col-6 col-lg-4 col-sm-6">
-         <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/jenvox?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:-200px; overflow:hidden;"></iframe></div>
+        <div class="container video-container">
+          <video controls>
+            <source src="video6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <!--End of Portfolio-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+
