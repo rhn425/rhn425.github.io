@@ -11,6 +11,10 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
   <style>
+    .navbar {
+      color: black; /* Change navbar font color to black */
+    }
+
     .container {
       text-align: center;
     }
@@ -59,6 +63,7 @@
       width: 100%;
       position: relative;
       padding-top: 100%; /* 1:1 Aspect Ratio (square) */
+      background-color: #000; /* Set background color to make container visible */
     }
     
     /* Make video player 1:1 px */
@@ -94,7 +99,7 @@
       margin: auto;
       margin-top: 10%;
     }
-    
+
     /* Play button style */
     .play-button {
       position: absolute;
@@ -148,7 +153,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video1.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -157,7 +162,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video2.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -166,7 +171,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video3.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -178,7 +183,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video4.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video4.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -187,7 +192,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video5.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video5.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -196,7 +201,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video6.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video6.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -208,7 +213,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video7.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video7.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -217,7 +222,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video8.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video8.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -226,7 +231,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video9.mp4')"><i class="fa fa-play"></i></div>
-          <video controls preload="metadata" loop muted style="display: none;">
+          <video autoplay muted loop preload="metadata">
             <source src="assets/video9.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -241,14 +246,30 @@
   function showVideo(src) {
     var videoPopup = document.querySelector('.video-popup');
     var popupVideo = videoPopup.querySelector('video');
-    popupVideo.src = src;
-    videoPopup.style.display = 'block';
-    popupVideo.play();
+    var video = document.createElement('video');
+    video.src = src;
+    video.addEventListener('loadedmetadata', function() {
+      var aspectRatio = video.videoWidth / video.videoHeight;
+      if (aspectRatio > 1.0) {
+        // Horizontal video
+        videoPopup.style.display = 'block';
+        popupVideo.src = src;
+        popupVideo.play();
+      } else if (aspectRatio < 1.0) {
+        // Portrait video
+        alert('Portrait videos are not supported in this demo.');
+      } else {
+        // Square video
+        videoPopup.style.display = 'block';
+        popupVideo.src = src;
+        popupVideo.play();
+      }
+    });
   }
 </script>
 
 <div class="video-popup" onclick="this.style.display='none'">
-  <video controls autoplay loop muted></video>
+  <video controls autoplay loop></video>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
