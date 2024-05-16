@@ -11,10 +11,6 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
   <style>
-    .navbar {
-      color: black; /* Change navbar font color to black */
-    }
-
     .container {
       text-align: center;
     }
@@ -61,47 +57,12 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      position: relative;
-      padding-top: 100%; /* 1:1 Aspect Ratio (square) */
-      background-color: #000; /* Set background color to make container visible */
     }
     
-    /* Make video player 16:9 (horizontal) or 9:16 (portrait) */
+    /* Make video player 1:1 px */
     .video-container video {
-      position: absolute;
-      width: auto;
-      height: auto;
       max-width: 100%;
       max-height: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-    /* Style for video popup */
-    .video-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 1000;
-      overflow: auto;
-    }
-    
-    .video-popup video {
-      width: auto;
-      height: auto;
-      max-width: 80%;
-      max-height: 80%;
-      display: block;
-      margin: auto;
-    }
-
-    /* Play button style */
-    .play-button {
-      display: none; /* Hide play button */
     }
   </style>
 </head>
@@ -133,36 +94,64 @@
  
   <div class="container-fluid">
     <div class="row no-gutter">
-      <div class="col-4 col-lg-4 col-sm-4">
+      <div class="col-6 col-lg-4 col-sm-6">
         <div class="container video-container">
-          <div class="play-button" onclick="showVideo('assets/video1.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted preload="metadata">
-            <source src="assets/video1.mp4" type="video/mp4">
+          <video controls>
+            <source src="video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
-      <!-- Add more video containers here -->
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row no-gutter">
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-sm-6">
+        <div class="container video-container">
+          <video controls>
+            <source src="video6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <!--End of Portfolio-->
 
-<script>
-  function showVideo(src) {
-    var videoPopup = document.querySelector('.video-popup');
-    var popupVideo = videoPopup.querySelector('video');
-    popupVideo.src = src;
-    videoPopup.style.display = 'block';
-    popupVideo.play();
-  }
-</script>
-
-<div class="video-popup" onclick="this.style.display='none'">
-  <video controls autoplay></video>
-</div>
-
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
+
