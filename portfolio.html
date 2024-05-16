@@ -115,11 +115,6 @@
       align-items: center;
       cursor: pointer;
     }
-    function showVideo(src) {
-  console.log("Video source:", src);
-  // Rest of the function code...
-}
-
     
     .play-button i {
       font-size: 30px;
@@ -249,6 +244,7 @@
 
 <script>
   function showVideo(src) {
+    console.log("Video source:", src); // Debugging step: Log the video source
     var videoPopup = document.querySelector('.video-popup');
     var popupVideo = videoPopup.querySelector('video');
     var video = document.createElement('video');
