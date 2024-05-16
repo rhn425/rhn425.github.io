@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./style.css">
   <style>
     .navbar {
+      font-family: 'Josefin Sans', sans-serif; /* Set font-family for navigation */
       color: black; /* Change navbar font color to black */
     }
 
@@ -62,33 +63,30 @@
       align-items: center;
       width: 100%;
       position: relative;
-      padding-top: 100%; /* 1:1 Aspect Ratio (square) */
+      padding-top: 56.25%; /* 16:9 Aspect Ratio (horizontal) */
       background-color: #000; /* Set background color to make container visible */
     }
     
-    /* Make video player 1:1 px */
+    /* Make video player fill container */
     .video-container video {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1; /* Ensure video is clickable */
     }
     
     /* Style for video popup */
     .video-popup {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: rgba(0, 0, 0, 0.8);
       z-index: 1000;
       overflow: auto;
+      padding: 20px; /* Add spacing */
     }
     
     .video-popup video {
@@ -103,24 +101,7 @@
 
     /* Play button style */
     .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      z-index: 2; /* Ensure play button is clickable */
-    }
-    
-    .play-button i {
-      font-size: 30px;
-      color: #333;
+      display: none; /* Hide play button */
     }
   </style>
 </head>
@@ -134,7 +115,7 @@
         <a class="navbar-brand page-scroll" href="#">Rhen Armenta</a>
       </div>
       <div class="collapse navbar-collapse" id="myNav">
-        <ul class=" nav navbar-nav pull-right">
+        <ul class="nav navbar-nav pull-right">
           <li><a href="about.html" class="page-scroll">About</a></li>
           <li><a href="portfolio.html" class="page-scroll">Portfolio</a></li>
           <li><a href="contact.html" class="page-scroll">Contact</a></li>
@@ -142,20 +123,21 @@
       </div>
     </div>
   </div>
-  <!--PortFolio-->
+  <!-- Portfolio -->
 
 <div class="no-padding text-center" id="portfolio">
  <div class="container">
    <h1>Portfolio</h1>
-    <hr></hr>
+    <hr>
   </div>
  
   <div class="container-fluid">
     <div class="row no-gutter">
+      <!-- Video containers -->
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video1.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -164,7 +146,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video2.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -173,7 +155,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video3.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -181,13 +163,13 @@
       </div>
     </div>
     
-    <!-- More video containers... -->
+    <!-- More video containers -->
     
     <div class="row no-gutter">
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video4.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video4.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -196,7 +178,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video5.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video5.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -205,7 +187,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video6.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video6.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -217,7 +199,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video7.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video7.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -226,7 +208,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video8.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video8.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -235,7 +217,7 @@
       <div class="col-4 col-lg-4 col-sm-4">
         <div class="container video-container">
           <div class="play-button" onclick="showVideo('assets/video9.mp4')"><i class="fa fa-play"></i></div>
-          <video autoplay muted loop preload="metadata">
+          <video autoplay muted>
             <source src="assets/video9.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -244,7 +226,11 @@
     </div>
   </div>
 </div>
-<!--End of Portfolio-->
+<!-- End of Portfolio -->
+
+<div class="video-popup" onclick="this.style.display='none'">
+  <video controls autoplay loop></video>
+</div>
 
 <script>
   function showVideo(src) {
@@ -271,10 +257,6 @@
     });
   }
 </script>
-
-<div class="video-popup" onclick="this.style.display='none'">
-  <video controls autoplay loop></video>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
