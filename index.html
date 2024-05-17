@@ -3,69 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>Rhen Armenta</title>
-  
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
-  
   <style>
-    @media (max-width: 767px) and (orientation: portrait) {
-      .navbar-collapse {
-        text-align: left;
-      }
-      .navbar-nav {
-        float: none;
-      }
-      .navbar-nav > li {
-        float: none;
-      }
+    /* Reset body and html to prevent scrolling */
+    body, html {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .circle-frame {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 150px auto 0; /* Adjust margin as needed */
+    }
+
+    .circle-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    h3 {
+      font-size: 35px; /* Adjust font size for h3 */
+    }
+
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 35px; /* Adjust font size for typing text */
+      border-right: .15em solid orange; /* Typewriter cursor */
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: orange; }
     }
   </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
-        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-      </button>
-      <a class="navbar-brand page-scroll" href="#">Rhen Armenta</a> 
-    </div>
-    <div class="collapse navbar-collapse" id="myNav">
-      <ul class="nav navbar-nav pull-right">
-        <li><a href="#about" class="page-scroll">About</a></li>
-        <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
-        <li><a href="#contact" class="page-scroll">Contact</a></li>
-      </ul>
+  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#">Rhen Armenta</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNav">
+        <ul class=" nav navbar-nav pull-right">
+          <li><a href="about.html" class="page-scroll">About</a></li>
+          <li><a href="portfolio.html" class="page-scroll">Portfolio</a></li>
+          <li><a href="contact.html" class="page-scroll">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-
-<!-- Include jQuery and Bootstrap JavaScript at the end of the body for proper loading -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-  // Optional: Smooth scrolling for anchor links
-  $(document).ready(function(){
-    $('a.page-scroll').on('click', function(event) {
-      var target = $(this.getAttribute('href'));
-      if (target.length) {
-        event.preventDefault();
-        $('html, body').stop().animate({
-          scrollTop: target.offset().top
-        }, 1000);
-      }
-    });
-  });
-</script>
-</body>
-</html>
-
 
   <!--Banner-->
   <section class="banner">
