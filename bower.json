@@ -1,0 +1,31 @@
+{
+  "name": "ReallyFree3dBoxShotMaker",
+  "authors": [
+    "Ronen <RonenNess@gmail.com>"
+  ],
+  "description": "Generate 3d box shots for virtual products.",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "3d",
+    "box",
+    "product",
+    "shot"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-fileinput": "4.3.1",
+    "three.js": "threejs#*",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1",
+    "JSColor": "^1.4.2"
+  }
+}
