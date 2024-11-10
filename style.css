@@ -14,6 +14,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: #ecf0f3;
+  padding: 10px; /* For small margin around the card */
 }
 
 .wrapper,
@@ -26,15 +27,15 @@ body {
 
 .wrapper {
   position: relative;
-  width: 90vw;
-  max-width: 350px;
+  width: 100%;
+  max-width: 400px; /* Max width for larger screens */
   padding: 20px;
+  margin: auto; /* Center on all screen sizes */
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transform: scale(1.05);
   background: #fff;
   box-shadow: 0 1px 5px rgba(41, 41, 41, 0.45), 0 0.33em 0.725em -0.455em rgba(0, 0, 0, 0.4);
 }
@@ -170,8 +171,9 @@ body {
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .wrapper {
-    width: 100vw;
-    padding: 20px;
+    width: 100%;
+    max-width: 90vw;
+    padding: 15px;
   }
 
   .wrapper .name {
