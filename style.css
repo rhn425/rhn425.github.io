@@ -30,7 +30,7 @@ body {
 .wrapper {
   position: relative;
   width: 350px;
-  max-width: 100%;
+  max-width: 90vw;
   padding: 30px;
   border-radius: 10px;
   display: flex;
@@ -205,9 +205,9 @@ body {
 @media (max-width: 480px) {
   .wrapper {
     width: 100vw;
-    height: 177.78vw; /* 9:16 aspect ratio */
-    padding: 20px;
+    height: calc(100vw * 16 / 9); /* Adjust for 9:16 aspect ratio */
     max-height: 100vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
