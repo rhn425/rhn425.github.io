@@ -14,9 +14,6 @@ body {
   justify-content: center;
   min-height: 100vh;
   background: #ecf0f3;
-  background: url(https://assets.codepen.io/4927073/dogsbg2.jpg);
-  background-size: cover !important;
-  background-position: 50% 50%;
 }
 
 .wrapper,
@@ -29,21 +26,17 @@ body {
 
 .wrapper {
   position: relative;
-  width: 350px;
-  max-width: 90vw;
-  padding: 30px;
+  width: 90vw;
+  max-width: 350px;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   transform: scale(1.05);
-  background: hsl(230deg 67% 98% / 60%);
-  border-color: #ffffff99 #ffffff60 #0001 #ffffff50 !important;
-  backdrop-filter: blur(11px) saturate(110%) !important;
-  box-shadow: 0 1px 5px 1px rgb(41 41 41 / 45%), 0 0.33em 0.725em -0.455em rgb(0 0 0 / 40%), inset 0 0.0625em 0 rgb(255 255 255 / 50%), inset 0 -0.125em 0.0625em rgb(0 0 0 / 28%) !important;
-  border: 2px outset rgba(255, 255, 255, 0.3) !important;
-  text-shadow: 0.25px 0.25px 0.85px #f8f9fa, 0.125px 0.125px 1px hsl(210deg 14% 38% / 83%);
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(41, 41, 41, 0.45), 0 0.33em 0.725em -0.455em rgba(0, 0, 0, 0.4);
 }
 
 .wrapper .icon {
@@ -59,11 +52,6 @@ body {
   line-height: 35px;
   border-radius: 50%;
   font-size: 16px;
-}
-
-.wrapper .icon i {
-  position: relative;
-  z-index: 9;
 }
 
 .wrapper .icon.arrow {
@@ -124,25 +112,6 @@ body {
   border-radius: 50%;
 }
 
-.social-icons a:hover::before,
-.wrapper .icon:hover::before,
-.buttons button:hover:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border-radius: 50%;
-  background: #ecf0f3;
-  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
-}
-
-.buttons button:hover:before {
-  z-index: -1;
-  border-radius: 5px;
-}
-
 .social-icons a i {
   position: relative;
   z-index: 3;
@@ -175,17 +144,14 @@ body {
 }
 
 .buttons button {
-  position: relative;
   width: 100%;
   border: none;
-  outline: none;
   padding: 12px 0;
   color: #31344b;
   font-size: 11pt;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 4;
 }
 
 .buttons button:first-child {
@@ -205,13 +171,7 @@ body {
 @media (max-width: 480px) {
   .wrapper {
     width: 100vw;
-    height: calc(100vw * 16 / 9); /* Adjust for 9:16 aspect ratio */
-    max-height: 100vh;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
 
   .wrapper .name {
