@@ -1,185 +1,176 @@
+/* css reset */
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Variables */
+
+:root {
+    --theme-color: rgba(255, 51, 0, 0.911);
+    --theme-on:  rgb(255, 51, 0);
+}
+
+/* Background */
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: url("https://i.imgur.com/It2UuVm.jpeg") no-repeat center center/cover;
 }
 
-/* Main Container */
+/* Credit to the Image */
+#credit {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    font-size: 5px;
+    color: white;
+}
+
+/* Container */
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    flex-direction: column;
+    width: 350px;
+    height: 550px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgb(28, 24, 48);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* .profile-container:hover */
-.profile-container {
-  width: 300px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
-  transition: 1s all ease;
-  
+/* Profile */
+
+.container .main .intro .imgBx {
+    width: 100px;
+    height: 100px;
+    background: white;
+    overflow: hidden;
+    border: 4px solid var(--theme-color);
+    border-radius: 50%;
+    animation: borders 10s infinite;
 }
 
-.profile-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://www.dropbox.com/s/ce3avjentos3rp3/profile-pcs.jpg?raw=1') no-repeat center center/cover;
-  z-index: -1;
-  opacity: 1;  
-  transition: all .5s ease-in;
+@keyframes borders {
+    0% {
+        border: 4px solid var(--theme-color);
+    }
+    25% {
+        border: 4px solid rgb(255, 230, 0);
+    }
+    50% {
+        border: 4px solid rgb(0, 238, 255);
+    }
+    75% {
+      border: 4px solid rgb(136, 255, 0);
+    }
+    100% {
+        border: 4px solid var(--theme-color);
+    }
 }
 
-.profile-container:hover:before {
-  opacity: 0;
-  transition: all .5s ease;
+.container .main .intro .imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-/* Profile Card Wrapper */
-.profile-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
+.container .main .intro h2 {
+    color: white;
 }
 
-.profile-wrapper::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #2371ae 0%, #bb47d4 100%);
-  transform: skew(30deg) translateX(125%);
-  opacity: 0.9;
-  transition: all 0.6s ease;
+.container .main .intro p {
+    color: var(--theme-color);
 }
 
-.profile-wrapper::after{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #2371ae 0%, #bb47d4 100%);
-  transform: skew(30deg) translateX(-125%);
-  opacity: 0.9;
-  transition: all 0.6s ease;
+.container .main .intro {
+    flex-direction: column;
 }
 
-.profile-container:hover .profile-wrapper::after{
-  transform: skew(30deg) translateX(125%);
-  background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
-  
-}
-.profile-container:hover .profile-wrapper::before{
-  transform: skew(30deg) translateX(-125%);
-  background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+/* Links */
+
+.container .main .links a {
+    text-decoration: none;
 }
 
-/* Profile Card */
-.profile-card {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem 10px;
-  position: relative;
-  opacity: 0;
-  transition: all 0.3s ease;
+.container .main .links a img {
+    transition: 0.55s;
+    width: 24px;
 }
 
-.profile-container:hover .profile-card {
-  opacity: 1;
-  transition: all 0.6s ease;
-  transition-delay: 0.2s;
+/* Contact Me button */
+
+.container .main .contact-btn {
+    padding: 10px 50px;
+    color: var(--theme-on);
+    background: transparent;
+    border: 1px solid var(--theme-on);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.55s;
 }
 
-.profile-card .fav-icon {
-  color: #ec0e0e;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  font-size: 21px;
-  cursor: pointer;
-} 
-
-/* Profile Picture */
-.profile-card img {
-  display: block;
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 1rem 0;
-  border: 2px solid transparent;
-  background-image: linear-gradient(white, white), 
-                    linear-gradient(to right, green, gold);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  /* border: 2px solid #1999; */
-  position: relative;
+.container .main .contact-btn:hover {
+    color: white;
+    background: var(--theme-on);
 }
 
-.profile-card  h2 {
-  line-height: 1.2;
-  color: #222;
-}
-.profile-card  h4 {
-  line-height: 1.5;
-  color: #444;
+/* Main */
+
+.container .main {
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
 }
 
-.profile-card  p {
-  line-height: 1.2;
-  color: #333;
-  margin: 10px 0;
+/* Stats */
+
+.stats {
+    background: white;
+    width: 100%;
+    height: 30%;
 }
 
-/* Profile Icons */
-.profile-card .icons {
-  display: flex;
-  color: #333;
-  width: 90%;
-  justify-content: space-evenly;
-  font-size: 1.4rem;
-  margin: 5px 0;
+.stats .stat {
+    width: 33%;
+    height: 30px;
+    flex-direction: column;
+    background: white;
+    border-right: 1px solid rgb(175, 175, 175);
 }
 
-.profile-card .icons i:hover {
-  background-image: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
+.stat:last-child {
+    border: none;
 }
 
-/* Profile Button */
-.profile-card a {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFFFFF;
-  padding: 8px 20px;
-  margin-top: 1rem;
-  background: #2371ae;
-  border-radius: 50px;
-  background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+.stats .stat p small {
+    color: var(--theme-color);
+}
+
+/* Utility classes */
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.y-margin {
+    margin: 10px 0;
+}
+
+.top-margin {
+    margin-top: 7px;
+}
+
+.x-margin {
+    margin: 0 10px;
+}
+
+.fonts {
+    font-family: 'Poppins', sans-serif;
 }
